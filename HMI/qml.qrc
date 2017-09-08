@@ -1,0 +1,22 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Search_Page.qml</file>
+        <file>Search_PageForm.ui.qml</file>
+        <file>qtquickcontrols2.conf</file>
+        <file>MainMenu_Button.qml</file>
+        <file>Custom_TextField.qml</file>
+        <file>Navigation_Page.qml</file>
+        <file>Navigation_PageForm.ui.qml</file>
+        <file>map.html</file>
+        <file>Radio_Page.qml</file>
+        <file>Radio_PageForm.ui.qml</file>
+        <file>MultiMedia_Page.qml</file>
+        <file>MultiMedia_PageForm.ui.qml</file>
+        <file>FileBrowser.qml</file>
+        <file>FileDelegate.qml</file>
+        <file>Settings_Page.qml</file>
+        <file>Settings_PageForm.ui.qml</file>
+        <file>placeholder_music.jpg</file>
+    </qresource>
+</RCC>
