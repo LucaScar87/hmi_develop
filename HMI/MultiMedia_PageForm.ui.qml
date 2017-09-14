@@ -19,6 +19,7 @@ Rectangle {
     property alias videoOutput: videoOutput
     property alias placeholder_music: placeholder_music
     property alias track_name: track_name
+    property alias textField: textField
 
     FileDialog {
         id: fileDialog
@@ -64,13 +65,13 @@ Rectangle {
         width: 600
         autoOrientation: true
         anchors.bottom: progressBar.top
-        anchors.bottomMargin: 10
+        anchors.bottomMargin: 9
         anchors.right: parent.right
         anchors.rightMargin: 10
         anchors.left: parent.left
         anchors.leftMargin: 10
         anchors.top: fileManager_button.bottom
-        anchors.topMargin: 10
+        anchors.topMargin: 11
         //fillMode: VideoOutput.PreserveAspectFit
         source: mediaplayer
         visible: false
@@ -131,13 +132,11 @@ Rectangle {
         y: 460
         height: 8
         color: "#ffffff"
-        text: qsTr(Math.floor(mediaplayer.position/3600000) + ":" +
-                   Math.floor((mediaplayer.position-(Math.floor(mediaplayer.position/3600000)*3600000))/60000)+ ":" +
-                   Math.floor((Math.floor((mediaplayer.position-(Math.floor(mediaplayer.position/60000)*60000))/1000))%60)
-                   + "||" +
-                   Math.floor(mediaplayer.duration/3600000) + ":" +
-                   Math.floor((mediaplayer.duration-(Math.floor(mediaplayer.duration/3600000)*3600000))/60000)+ ":" +
-                   Math.floor((Math.floor((mediaplayer.duration-(Math.floor(mediaplayer.duration/60000)*60000))/1000))%60))
+        text: qsTr(
+                  Math.floor(mediaplayer.position / 3600000) + ":"
+                  + Math.floor((mediaplayer.position - (Math.floor(mediaplayer.position / 3600000) * 3600000)) / 60000) + ":"
+                  + Math.floor((Math.floor((mediaplayer.position - (Math.floor(
+                                                                        mediaplayer.position / 60000) * 60000)) / 1000)) % 60) + "||" + Math.floor(mediaplayer.duration / 3600000) + ":" + Math.floor((mediaplayer.duration - (Math.floor(mediaplayer.duration / 3600000) * 3600000)) / 60000) + ":" + Math.floor((Math.floor((mediaplayer.duration - (Math.floor(mediaplayer.duration / 60000) * 60000)) / 1000)) % 60))
         styleColor: "#ee3f3f"
         anchors.bottom: parent.bottom
         anchors.bottomMargin: 10
@@ -147,25 +146,28 @@ Rectangle {
 
     Image {
         id: placeholder_music
+        width: 300
+        height: 300
         fillMode: Image.PreserveAspectFit
         visible: false
-        anchors.rightMargin: 200
-        anchors.leftMargin: 200
-        anchors.bottomMargin: 150
-        anchors.topMargin: 150
+        anchors.rightMargin: 100
+        anchors.leftMargin: 100
+        anchors.bottomMargin: 70
+        anchors.topMargin: 100
         anchors.fill: parent
-        source: "placeholder_music.jpg"
+        //source: "placeholder_music.jpg"
     }
 
     Text {
         id: track_name
-        x: 200
         width: 240
         height: 14
         text: qsTr("")
+        anchors.left: placeholder_music.horizontalCenter
+        anchors.leftMargin: -120
+        anchors.top: placeholder_music.verticalCenter
+        anchors.topMargin: 160
         horizontalAlignment: Text.AlignHCenter
-        anchors.top: placeholder_music.bottom
-        anchors.topMargin: 20
         font.pixelSize: 12
     }
 }

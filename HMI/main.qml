@@ -5,9 +5,9 @@ import QtQuick.Layouts 1.0
 ApplicationWindow {
     id: window
     visible: true
-    width: 640
+    width: 900
     height: 480
-    title: qsTr("HMI" + utilts_plugin.totalPrice)
+    title: qsTr("HMI")
 
     property alias gradient_general: gradient_general
     property alias gradient_stop: gradient_stop

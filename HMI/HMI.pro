@@ -1,4 +1,4 @@
-QT += qml quick webview core multimedia multimediawidgets
+QT += qml quick core multimedia multimediawidgets
 !no_desktop: QT += widgets
 # webengine
 
@@ -31,6 +31,23 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    utilts.h
+    coverart.h
 
 DISTFILES +=
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../taglib-1.11/taglib-debug/ -ltaglib
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../taglib-1.11/taglib-debug/ -ltaglib
+else:unix: LIBS += -L$$PWD/../taglib-1.11/taglib-debug/ -ltaglib
+
+INCLUDEPATH += $$PWD/../taglib-1.11/taglib
+DEPENDPATH += $$PWD/../taglib-1.11/taglib
+INCLUDEPATH += $$PWD/../taglib-1.11/taglib/mpeg
+DEPENDPATH += $$PWD/../taglib-1.11/taglib/mpeg
+INCLUDEPATH += $$PWD/../taglib-1.11/taglib/mpeg/id3v2
+DEPENDPATH += $$PWD/../taglib-1.11/taglib/mpeg/id3v2
+INCLUDEPATH += $$PWD/../taglib-1.11/taglib/mpeg/id3v2/frames
+DEPENDPATH += $$PWD/../taglib-1.11/taglib/mpeg/id3v2/frames
+INCLUDEPATH += $$PWD/../taglib-1.11/taglib/toolkit
+DEPENDPATH += $$PWD/../taglib-1.11/taglib/toolkit
+INCLUDEPATH += $$PWD/../taglib-1.11/taglib/mp4
+DEPENDPATH += $$PWD/../taglib-1.11/taglib/mp4

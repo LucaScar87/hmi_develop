@@ -1,7 +1,7 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
-#include "utilts.h"
+#include "coverart.h"
 
 int main(int argc, char *argv[])
 {
@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
     //QtWebEngine::initialize();
 
     QQmlApplicationEngine engine;
-    engine.rootContext()->setContextProperty("utilts_plugin", new Utilts);
+    engine.rootContext()->setContextProperty("coverArt", new CoverArt);
     engine.load(QUrl(QLatin1String("qrc:/main.qml")));
     return app.exec();
 }
