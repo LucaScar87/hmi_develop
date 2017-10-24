@@ -4,7 +4,8 @@ QT += qml quick core multimedia multimediawidgets
 
 CONFIG += c++11
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    coverart.cpp
 
 RESOURCES += qml.qrc
 
@@ -33,9 +34,10 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     coverart.h
 
-DISTFILES +=
+DISTFILES += \
+    Picture/placeholder_music.jpg
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../taglib-1.11/taglib-debug/ -ltaglib
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../taglib-1.11/taglib-release/ -ltaglib
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../taglib-1.11/taglib-debug/ -ltaglib
 else:unix: LIBS += -L$$PWD/../taglib-1.11/taglib-debug/ -ltaglib
 

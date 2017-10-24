@@ -21,8 +21,8 @@ ApplicationWindow {
             id: listView
             x: 41
             y: 125
-            width: 100
-            height: 241
+            width: lateral_menu.width
+            height: window.height
             clip: true
             anchors.fill: parent
             delegate: ItemDelegate {
@@ -149,7 +149,7 @@ ApplicationWindow {
         }
         TabButton {
             id: fifth_tabButton
-            text: qsTr("Settings")
+            text: "Settings"
         }
     }
 }

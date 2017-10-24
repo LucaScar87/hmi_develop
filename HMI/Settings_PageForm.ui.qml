@@ -8,8 +8,6 @@ Rectangle {
 
     MainMenu_Button {
         id: button_to_change_hmi_color
-        width: 129
-        height: 40
         text: "Change HMI color"
         focus: false
         flat: false

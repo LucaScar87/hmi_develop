@@ -17,6 +17,7 @@
         <file>FileDelegate.qml</file>
         <file>Settings_Page.qml</file>
         <file>Settings_PageForm.ui.qml</file>
-        <file>placeholder_music.jpg</file>
+        <file>Picture/placeholder_music.jpg</file>
+        <file>Picture/placeholder_audio.gif</file>
     </qresource>
 </RCC>
